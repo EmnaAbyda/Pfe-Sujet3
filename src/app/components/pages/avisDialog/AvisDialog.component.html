@@ -1,0 +1,38 @@
+<div class="product-dialog">
+
+    <div class="close-btn-outer">
+      <button mat-mini-fab color="warn" (click)="close()"><mat-icon>close</mat-icon></button>
+    </div>
+    <div mat-dialog-content>
+      <div fxLayout="row wrap" >
+        
+          <div fxFlex="100" fxFlex.gt-sm="50" ngClass.gt-sm="px-2 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2">
+            <div class="product-right">
+                <div style="display: inline" class="stars" *ngFor="let n of numSequence(avis.note)">
+                    <mat-icon style="display: inline" class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                
+                </div>
+              
+                <div class="product-details">         
+                  <h2 class="mb-10"></h2>
+                  <p class="bold">Titre:
+ {{ avis.titre  }} </p>
+                  <div class="discription">
+                    <p class="bold">Contenue:</p>
+                    <p class="text-muted productDescription">{{ avis.contenue}}</p>
+                    <p class="bold">Date:</p>
+                    <p class="text-muted productDescription">{{ avis.date}}</p>
+                  </div>
+              </div>
+          
+          
+            </div>
+  
+  
+  
+          </div>
+      </div>
+    </div>
+  
+    </div>
+  

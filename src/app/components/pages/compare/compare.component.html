@@ -1,0 +1,82 @@
+
+
+ <div class="compare-component sec-padding">
+  <div class="container">
+
+
+   <div  class="p-0">
+      <div class="col-sm-12 empty-cart-cls text-center" *ngIf="!products.length">
+          <img src="assets/images/backet-01.png" class="img-fluid mb-4" >
+            <h3 class="mb-5"><strong>Compare List is Empty</strong></h3>
+            <h4>Explore more shortlist some items.</h4>
+      </div>
+     <div class="table-responsive" *ngIf="nbr">
+        <table class="table">
+
+            <thead>
+            <tr class="th-compare">
+                <td>Action</td>
+                {{ users[0].cin}}
+                <th class="item-row" *ngFor="let c of users">
+                  <a (click)="removeItem(c)"><i class="material-icons">highlight_off</i></a>
+                </th>
+            </tr>
+            </thead>
+            <tbody id="table-compare">
+            <tr>
+                <th class="product-name">Order Date </th>
+                <td class="grid-link__title" *ngFor="let c of users ">
+                    <p  *ngFor="let u of c.commandes ">{{u.date |date:'short'}}  </p>
+                    </td>
+            </tr>
+             <tr>
+                <th class="product-name">Order status </th>
+                <td class="grid-link__title" *ngFor="let c of users">
+                    <p  *ngFor="let u of c.commandes ">{{ u.etat }}  </p>
+                </td>
+            </tr>
+            <tr>
+                
+                <th class="product-name ">Products Name</th>
+                <td class="item-row" *ngFor="let c of users ;let index=index  ">
+                    <img [src]="" width="185" class="featured-image">
+                    {{ c[0]}}
+                    <p  *ngFor="let u of c.commandes ">
+{{ u[0] }}
+                        <!--<p  *ngFor="let p of u.commandesProduits ">   
+                            {{
+                                p.commandesId
+                            }} -->
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th class="product-name">Product Description</th>
+                <td class="item-row" *ngFor="let c of users.commandes">
+                    <p class="description-compare"  *ngFor="let p of c.commandesProduits.produit">{{p.description}}  </p>
+                </td>
+            </tr>
+            <tr>
+                <th class="product-name">  Delivery man</th>
+                <td class="available-stock" *ngFor="let c of users">
+                    <p>  </p>
+                </td>
+            </tr>
+       
+            <tr>
+                <th class="product-name">  Notice</th>
+                <td class="available-stock" *ngFor="let c of commandes">
+                    <a (click)="openProductDialog(product)"><mat-icon>note_add</mat-icon></a>
+
+                  
+                </td>
+            </tr>
+            </tbody>
+        </table>
+     </div>
+
+    </div>
+
+  </div>
+
+  </div>

@@ -1,0 +1,41 @@
+<div class="product-dialog">
+
+    <div class="close-btn-outer">
+      <button mat-mini-fab color="warn" (click)="close()"><mat-icon>close</mat-icon></button>
+    </div>
+    <div mat-dialog-content>
+      <div class="header-title">
+        <h3>Add new Notice</h3>
+    </div>
+      <div fxLayout="row wrap" >
+        <form fxLayout="row wrap">
+          <div  fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50" class="mt-20 pr-5" ngClass.sm="mt-10" ngClass.xs="mt-10">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="Note (required)" #name="ngModel" ngModel name="name" required>
+                  <mat-error *ngIf="name.invalid">Please enter a valid message</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50" class="pl-5 mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+              <mat-form-field class="w-100">
+                  <input matInput placeholder="Titre (required)" #email="ngModel" ngModel name="email" required>
+                  <mat-error *ngIf="email.invalid">Please enter a valid message</mat-error>
+                </mat-form-field>
+          </div>
+          <div  fxFlex="100" fxFlex.gt-sm="100" class="mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+            <mat-form-field class="w-100">
+                <input matInput placeholder="Contenue (required)" #subject="ngModel" ngModel name="subject">
+              </mat-form-field>
+        </div>
+        
+       
+          <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+              <button class="btn-project" mat-raised-button color="accent" type="submit">Submit</button>
+            </div>
+          </form>
+        
+  
+  
+      </div>
+    </div>  
+</div>
+  

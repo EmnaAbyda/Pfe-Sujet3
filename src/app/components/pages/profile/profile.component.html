@@ -1,0 +1,45 @@
+
+<div class="about-us-wrapper">
+  <div class="container">
+    <div class="rmq-c321f64e rmq-e8b5057c rmq-bd8d1a29 rmq-42bc56e8 rmq-d102b5da rmq-d83a77af rmq-821e83c3" data-radium="true"><div data-radium="true">
+      <div data-radium="true" style="background-color: rgb(255, 255, 255); padding: 32px; margin-bottom: 24px; border-bottom: 1px solid rgb(232, 233, 235);">
+        <h2 data-radium="true" style="color: rgb(66, 66, 66); font-size: 24px; font-weight: bold; margin-top: 0px; margin-bottom: 16px; line-height: 1;">Account information</h2>
+        <div  *ngIf="userDetails" class="rmq-4e00d93" data-radium="true" style="font-size: 16px; padding: 0px; line-height: 40px; display: flex; gap: 8px; align-items: baseline;">
+          <span data-radium="true" style="width: 33%; display: inline-block;">Email</span>
+          <span data-radium="true" style="flex-grow: 1; overflow-wrap: anywhere;">{{userDetails.email}}</span>
+          <button type="button" aria-label="change email" class="rmq-1fcb6761 rmq-ac5e25f0 rmq-e9fd10a8" data-radium="true" style="touch-action: manipulation; cursor: pointer; border: none; border-radius: 4px; font-weight: 600; white-space: nowrap; user-select: none; -webkit-font-smoothing: antialiased; background-image: none; display: inline-flex; align-items: center; padding-left: 0px; padding-right: 0px; font-size: 16px; height: auto; background-color: transparent; color: rgb(67, 176, 42);"></button></div>
+          <div class="rmq-4e00d93" data-radium="true" style="font-size: 16px; padding: 0px; line-height: 40px; display: flex; gap: 8px; align-items: baseline;">
+            <span data-radium="true" style="width: 33%; display: inline-block;">Password</span>
+            <span data-radium="true" style="flex-grow: 1; overflow-wrap: anywhere;">{{userDetails.password}}</span>
+            <button type="button" aria-label="change password" class="rmq-1fcb6761 rmq-ac5e25f0 rmq-e9fd10a8" data-radium="true" style="touch-action: manipulation; cursor: pointer; border: none; border-radius: 4px; font-weight: 600; white-space: nowrap; user-select: none; -webkit-font-smoothing: antialiased; background-image: none; display: inline-flex; align-items: center; padding-left: 0px; padding-right: 0px; font-size: 16px; height: auto; background-color: transparent; color: rgb(67, 176, 42);"></button>
+          </div>
+        </div>
+            
+            <div data-radium="true" style="background-color: rgb(255, 255, 255); padding: 32px; margin-bottom: 24px; border-bottom: 1px solid rgb(232, 233, 235);">
+              <h2 data-radium="true" style="color: rgb(66, 66, 66); font-size: 24px; font-weight: bold; margin-top: 0px; margin-bottom: 16px; line-height: 1;">Personal information</h2>
+              <div class="rmq-4e00d93" data-radium="true" style="font-size: 16px; padding: 0px; line-height: 40px; display: flex; gap: 8px; align-items: baseline;">
+              <span data-radium="true" style="width: 33%; display: inline-block;">First name</span>
+              <span data-radium="true" style="flex-grow: 1; overflow-wrap: anywhere;">{{userDetails.userName}}</span>
+              <button type="button" aria-label="change user information" class="rmq-1fcb6761 rmq-ac5e25f0 rmq-e9fd10a8" data-radium="true" style="touch-action: manipulation; cursor: pointer; border: none; border-radius: 4px; font-weight: 600; white-space: nowrap; user-select: none; -webkit-font-smoothing: antialiased; background-image: none; display: inline-flex; align-items: center; padding-left: 0px; padding-right: 0px; font-size: 16px; height: auto; background-color: transparent; color: rgb(67, 176, 42);"></button>
+            </div>
+              
+              <div class="rmq-4e00d93" data-radium="true" style="font-size: 16px; padding: 0px; line-height: 40px; display: flex; gap: 8px; align-items: baseline;"><span data-radium="true" style="width: 33%; display: inline-block;">Last name</span><span data-radium="true" style="flex-grow: 1; overflow-wrap: anywhere;">{{userDetails.userName}}</span></div><div class="rmq-5625c8a1" data-radium="true" style="font-size: 16px; padding: 0px; line-height: 40px; display: flex; gap: 8px; align-items: baseline;"><span data-radium="true" style="width: 33%; display: inline-block;">Phone</span><span class="rmq-e79a7af8" data-radium="true" style="flex-grow: 1; overflow-wrap: anywhere; line-height: 1rem; font-size: 12px;"><span data-radium="true" style="white-space: pre;">
+                <div data-testid="users_phone_number" class="css-be6eus-UsersPhoneNumber">
+                <p class="css-1rwx7t7-UsersPhoneNumber">{{userDetails.phoneNumber}}</p></div></span></span>
+                <button type="button" aria-label="change phone number" class="rmq-1fcb6761 rmq-ac5e25f0 rmq-2682eda6" data-radium="true" style="touch-action: manipulation; cursor: pointer; border: none; border-radius: 4px; font-weight: 600; white-space: nowrap; user-select: none; -webkit-font-smoothing: antialiased; background-image: none; display: inline-flex; align-items: center; padding-left: 0px; padding-right: 0px; font-size: 16px; height: auto; background-color: transparent; color: rgb(67, 176, 42);"></button></div></div>
+             </div>
+          </div>
+          <div data-radium="true" style="background-color: rgb(255, 255, 255); padding: 32px; margin-bottom: 24px; border-bottom: 1px solid rgb(232, 233, 235);">
+            <h2 data-radium="true" style="color: rgb(66, 66, 66); font-size: 24px; font-weight: bold; margin-top: 0px; margin-bottom: 16px; line-height: 1;">Addresses</h2>
+            <div  *ngIf="userDetails" class="rmq-4e00d93" data-radium="true" style="font-size: 16px; padding: 0px; line-height: 40px; display: flex; gap: 8px; align-items: baseline;">
+              <span data-radium="true" style="width: 33%; display: inline-block;">Default address:
+
+              </span>
+              <span data-radium="true" style="flex-grow: 1; overflow-wrap: anywhere;">You haven't added a default shipping address yet.</span>
+              <button type="button" aria-label="change email" class="rmq-1fcb6761 rmq-ac5e25f0 rmq-e9fd10a8" data-radium="true" style="touch-action: manipulation; cursor: pointer; border: none; border-radius: 4px; font-weight: 600; white-space: nowrap; user-select: none; -webkit-font-smoothing: antialiased; background-image: none; display: inline-flex; align-items: center; padding-left: 0px; padding-right: 0px; font-size: 16px; height: auto; background-color: transparent; color: rgb(67, 176, 42);">Add</button></div>
+            
+            </div>  
+  </div>
+
+</div>
+

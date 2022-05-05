@@ -1,0 +1,154 @@
+<div class="container">
+  <div class="checkout sec-padding">
+      <div fxLayout="row wrap" class="">
+          <div class="billing-details  pr-15" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50">
+            <div class="header-title">
+                <h2>Add delivery address </h2>
+            </div>
+
+              <form fxLayout="row wrap">
+               
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Address line 1" #subject="ngModel" ngModel name="subject">
+                        </mat-form-field>
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Address line 2" #address="ngModel" ngModel name="address">
+                          <mat-error *ngIf="address.invalid">Please enter a valid message</mat-error>
+                        </mat-form-field>
+                  </div>
+   
+                  <div  fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50" class="pl-5 mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Postcode / zip (required)" #postcode="ngModel" ngModel name="postcode" required>
+                          <mat-error *ngIf="postcode.invalid">Please enter a valid message</mat-error>
+                        </mat-form-field>
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50" class="mt-20 pr-5" ngClass.sm="mt-10" ngClass.xs="mt-10">
+                    <mat-form-field class="w-100">
+                        <input matInput placeholder="State / Country" #state="ngModel" ngModel name="state" required>
+                        <mat-error *ngIf="state.invalid">Please enter a valid message</mat-error>
+                      </mat-form-field>
+                </div>
+                 
+                  <div  fxFlex="100" fxFlex.gt-md="100" fxFlex.md="50" class="pl-5 mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Instructions for delivery (optional)" #phone="ngModel" ngModel name="phone" >
+                          <mat-error *ngIf="phone.invalid">Please enter a valid message</mat-error>
+                        </mat-form-field>
+                  </div>
+                  <div class="add-info">
+                    <h3>Delivery time</h3>
+
+                  </div>
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="mt-20" ngClass.sm="mt-10" ngClass.xs="mt-10">
+                      <mat-form-field class="w-100">
+                          <textarea placeholder="Choose delivery time" matInput rows="4" ngModel name="content"></textarea>
+                        </mat-form-field>
+                  </div>
+                  <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <button class="btn-project" mat-raised-button color="accent" type="submit">Submit Review</button>
+                    </div>
+              
+                  
+
+                    <div class="products sec-padding">
+                      <div class="add-info">
+                        <h3>List of deliverers</h3>
+                      </div>
+                      <div class="product-item swiper-container" [swiper]="config" >
+                        <div class="swiper-wrapper h-100">
+                            <div *ngFor="let l of livreurs" class="swiper-slide">
+                                <mat-card fxLayout="column">
+                                <div class="product-img">
+                                   <!--    <a class="product-link" [routerLink]="">
+                                          <img [src]="" alt="">
+                                       </a>-->
+                                    </div>
+                                     <div class="product-info-wrapper">
+                                        <span class="category">{{l.applicationUser.email}}
+                                      
+                                        </span>
+                                        <div class="title-wrap">
+                                           <h4>{{l.applicationUser.userName}}</h4>
+                                        </div>
+                                        <div class="price-wrap" fxLayout="row" fxLayoutAlign="space-between center">
+                                          <p>{{l.applicationUser.phoneNumber}}</p><br>
+                                       <!--  <a (click)="addToCart(l)"><mat-icon class="mat-icon-lg mat-icon material-icons">remove_red_eye</mat-icon></a>-->
+                                         </div>
+                                        <div class="stars" style="display: inline"  *ngFor="let n of numSequence(l.avis.note)">
+                                            <mat-icon style="display: inline"  class="mat-icon-xs mat-icon material-icons ng-star-inserted">star_rate</mat-icon>
+                                        
+                                        </div>
+                                      <br>
+                                    
+                                     
+                                        <div class="icons" fxLayout="column">
+                                           <a (click)="addToWishlist(l)"><mat-icon class="mat-icon-lg mat-icon material-icons mr-10">favorite_border</mat-icon></a>
+                                           <a (click)="addToCompare(l)"><mat-icon>call</mat-icon></a>
+
+                                           <a (click)="openProductDialog(l.avis)"><mat-icon>remove_red_eye</mat-icon></a>
+
+                                        </div>
+                                     </div>
+                                  </mat-card>
+                            </div>
+                    
+                        </div>
+                        <button mat-mini-fab class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                        <button mat-mini-fab class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
+                      </div>
+                </div>
+                <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                  <button class="btn-project" mat-raised-button color="accent" type="submit">Submit</button>
+                </div>
+                  </form>
+
+          </div>
+          <div class="mainOrder-wrapper pl-15" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50">
+            <div class="main-order " >
+              <div class="order-box">
+                  <div class="title-box">
+                      <div>Product <span class="tl-amount"> Total</span></div>
+                  </div>
+                  <ul class="price-list" *ngIf='buyProducts.length'>
+                    <li *ngFor="let item of buyProducts">
+                       {{ item.product.nom }} × {{ item.quantity }}
+                      <span>
+                       {{ item.product.prix * item.quantity  }} DT
+                        </span>
+                    </li>
+                </ul>
+                <ul class="quantity" *ngIf='buyProducts.length <= 0'>
+                  <li class="empty-checkout"> There are no products in cart </li>
+                 </ul>
+                <ul class="total-amount">
+                  <li>
+                    Subtotal <span class="amount">{{ getTotal() | async }} DT</span>
+                  </li>
+                  <li *ngIf='buyProducts.length'>
+                    fresh delivery
+                        <span class="amount">8 DT</span>
+
+                  </li>
+              </ul>
+              <ul class="total">
+                <li>Total <span class="count"></span></li>
+            </ul>
+            <div class="paymentFinal">
+              <mat-radio-group>
+                <mat-radio-button fxLayout="column" *ngFor="let payment of paymantWay" [value]="payment">{{payment}}</mat-radio-button>
+              </mat-radio-group>
+            </div>
+            <div class="order">
+              <button class="btn-project" mat-raised-button color="accent" type="submit">PLACE ORDER</button>
+            </div>
+               </div>
+          </div>
+          </div>
+
+       </div>
+    </div>
+</div>

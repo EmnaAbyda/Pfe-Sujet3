@@ -1,0 +1,66 @@
+<div class="my-account sec-padding">
+  <div class="container">
+      <mat-card fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start"  class="p-0">
+          <div class="my-account-wrap p-0" fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start start" >
+              <div class="login-wrapper pr-50" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50">
+                  <div class="title">
+                    <h3>Log in</h3>
+                  </div>
+                  <form  fxLayout="row wrap" #form='ngForm' class="mb-4" autocomplete="off" (submit)="onSubmit(form)">
+                    <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                      <mat-form-field class="w-100">
+                          <input matInput placeholder="Email address (required)" #Email="ngModel" name="Email" [(ngModel)]="formModel.Email" required>
+                          <mat-error *ngIf="Email.invalid">Please enter a valid message</mat-error>
+                        </mat-form-field>
+                  </div>
+                 
+                  <div  fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                    <mat-form-field class="w-100">
+                      <input type="password" matInput placeholder="Password (required)" class="form-control" #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" required>
+
+                        <mat-error *ngIf="email.invalid">Please enter a valid message</mat-error>
+                      </mat-form-field>
+                </div>
+                <div class="button-wrap" fxFlex="100" fxFlex.gt-sm="100" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+                  <button class="btn-project" mat-raised-button color="accent"  type="submit"  [disabled]="form.invalid">Login</button>
+
+                </div>
+                    
+                  </form>
+                
+                </div>
+                <div class="register-wrapper pr-15" fxFlex="100" fxFlex.gt-md="50" fxFlex.md="50">
+                    <div class="title">
+                        <h3>Register</h3>
+                      </div>
+                      <ul>
+                        <li>
+                      
+                          <div class="register-body">
+                            <p>Create new account today to reap the benefits of a personalized shopping experience.</p>
+
+                            <a  class="text-muted" href="/pages/wishlist">Sign up to become a shopper</a>
+                            </div>                          
+                         <br>
+                        </li>
+                  
+                        <br>
+                        <li>
+                          <div class="register-body">
+                            <p>Create new account to paying you to deliver takeout products to customers who place orders through our app.</p>
+                            <p>Your time.
+                              Your goals.
+                              You're the boss.
+                              Start and stop when you want</p>
+                            <a class="text-muted" href="/pages/checkout">Sign up to deliver                        </a>
+    
+                          </div>                      
+                         <br>
+                        </li>
+                      </ul>
+                  </div>
+        </div>
+      </mat-card>
+
+  </div>
+</div>
